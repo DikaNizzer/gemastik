@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
-
+use App\Http\Controllers\Bimbingan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +15,6 @@ use App\Http\Controllers\Home;
 */
 
 Route::get('/', [Home::class, 'home']);
+
+
+Route::get('/dashboard', [Bimbingan::class, 'bimbingan']);

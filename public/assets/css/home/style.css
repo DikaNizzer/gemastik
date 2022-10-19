@@ -18,10 +18,10 @@ body {
 
 
 .btn-custom-daftar {
-	color: #D90000;
+	color: #6D0CBA;
     /* background:linear-gradient(180deg, #D90000 0%, #B606BA 100%); */
     background: #00000000;
-    border: 2px solid #D90000;
+    border: 2px solid #6D0CBA;
 	border-radius: 30px 0px 30px 30px;
     height:40px;
 	width:110px;
@@ -29,10 +29,10 @@ body {
 }
 
 .btn-custom-login {
-    background:#D90000;
+    background:#6D0CBA;
 	color: #ffff;
 	border-radius: 0px 30px 30px 30px;
-    border: 2px solid #D90000;
+    border: 2px solid #6D0CBA;
 	height:40px;
 	width:110px;
 	font-weight:700;
@@ -42,11 +42,13 @@ body {
 
 .home-header{
     padding:70px;
+    padding-top:60px;
+    padding-bottom:80px;
     margin:auto;
     width:100%;
     height:auto;
-    background-image: url(../../images/home-bg.png);
-	background-size:100%;
+    background-image: url(../../images/header-bg.png);
+	background-size:cover;
 	background-repeat: no-repeat;
 }
 
@@ -128,31 +130,32 @@ body {
     font-weight:700;
     text-align:center;
     padding:auto;
-    background:#D90000;
+    background:#6D0CBA;
 }
 
 .modal-login{
     background-color: #00000000;
-    color:#b50101;
+    color:#9C39FF;
     border:none;
 }
 
 .modal-login:hover{
-    color:#dc0404;
+    color:#6D0CBA;
     font-weight:700;
 }
 
 
 .btn-custom-daftar:hover,
 .btn-custom-login:hover,
-.register:hover{
-    background: #940000;
+.register:hover,
+.register-option:hover{
+    background: #9C39FF;
     color:#ffffff;
     border:none;
 }
 
 .get-started:hover{
-    color: #b50101;
+    color: #9C39FF;
     background-color: #ffff;
 }
 
@@ -245,12 +248,11 @@ body {
 
 
 
-
 .footer-top{
     min-height:50px;
     height:auto;
     width:100%;
-    background-color: #b50101;
+    background-color: #6D0CBA;
     color:#ffff;
     padding:15px;
 }
@@ -278,7 +280,7 @@ body {
 .auth-label{
     font-size:14px;
     font-weight:600;
-    color:#b50101;
+    color:#6D0CBA;
 }
 
 .auth-form{
@@ -296,48 +298,34 @@ body {
 
 .auth-form:hover{
     background-color:#00000000;
-    border: 1px solid #b50101;
+    border: 1px solid #6D0CBA;
 }
 
 
 .auth-form:focus,
 .auth-form:active{
     background-color:#00000000;
-    border: 1px solid #b50101;
+    border: 1px solid #6D0CBA;
     box-shadow:none;
 }
 
 
-.ml11 {
-    font-weight: 700;
-    font-size:50px;
-  }
-  
-  
-  .ml11 .text-wrapper {
-    position: relative;
-    display: inline;
-    padding-top: 0.1em;
-    padding-right: 0.05em;
-    padding-bottom: 0.15em;
-  }
-  
-  .ml11 .line {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 3px;
-    background-color: #fff;
-    transform-origin: 0 50%;
-  }
-  
-  .ml11 .line1 { 
-    top: 0; 
-    left: 0;
-  }
-  
-  .ml11 .letter {
-    display:inline;
-    line-height: 1em;
-  }
+
+
+.register-option{
+    width:100%;
+    height:50px;
+    border-radius: 10px;
+    color:#ffff;
+    background-color: #6D0CBA;
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    font-weight:500;
+    margin:auto;
+    margin-bottom:20px;
+    padding:10px;
+}
+
+
+

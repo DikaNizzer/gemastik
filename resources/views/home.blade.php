@@ -5,21 +5,21 @@
 
 
 <section class="home" id="home">
-    <div class="home-header" style="margin-top:">
+    <div class="home-header" style="margin-top:70px">
       <div class="row" >
-        <div class="col-lg-5" style="margin-top:20px">
-            <h1>Temukan dan dapatkan pekerjaan impianmu</h1>
-            <h5>Coba sekarang!</h5>
-            <button class=" get-started mb-4 mt-4" data-bs-toggle="modal" data-bs-target="#registerModal"> GET STARTED</button>
+        <div class="col-lg-6" style="padding-top:5%; padding-left:20px">
+            <h1>Sistem Informasi Pengelolaan Tugas Akhir</h1>
+            <h5>Tugas akhir yang baik adalah tugas akhir yang selesai</h5>
+            <button class=" get-started mb-4 mt-4" data-bs-toggle="modal" data-bs-target="#loginModal"> GET STARTED</button>
         </div>
-        <div class="col-lg-6 " style="margin-left:3%">
+        <div class="col-lg-6 " >
           <img src="assets/images/home-img.svg"class="img-fluid home-img" style="margin:auto">
         </div>
       </div>
     </div>
 </section>
 
-<section id="artikel" class="artikel">
+{{-- <section id="artikel" class="artikel">
 	<div class="container" data-aos="fade_up">
 		<div class="row mb-4 ">
 			<div class="col-lg-8">
@@ -40,7 +40,7 @@
 					<div class="border rounded h-100 d-flex flex-column justify-content-between pb-3" style="background-color:#ffff">
 						<div class="overflow-hidden card-custom">
 							<div class="position-relative overflow-hidden rounded-top over-shadow" style="margin:15px">
-								<img class="artikel artikel-img" src="assets/images/job.png" alt="">
+								<img class="artikel artikel-img" src="assets/images/job.jpg" alt="">
 							</div>
 							<div class="p-3 pb-0 over-headline">
 								<h4><span class="artikel badge">Kategori</span></h4>
@@ -56,7 +56,7 @@
 					<div class="border rounded h-100 d-flex flex-column justify-content-between pb-3" style="background-color:#ffff">
 						<div class="overflow-hidden card-custom">
 							<div class="position-relative rounded-top overflow-hidden over-shadow" style="margin:15px">
-								<img class="artikel artikel-img" src="assets/images/job.png" alt="">
+								<img class="artikel artikel-img" src="assets/images/job.jpg" alt="">
 							</div>
 							<div class="p-3 pb-0">
 								<h4><span class="artikel badge">Kategori</span></h4>
@@ -72,7 +72,7 @@
 					<div class="border rounded h-100 d-flex flex-column justify-content-between pb-3" style="background-color:#ffff">
 						<div class="overflow-hidden card-custom">
 							<div class="position-relative rounded-top overflow-hidden over-shadow" style="margin:15px">
-								<img class="artikel artikel-img" src="assets/images/job.png" alt="">
+								<img class="artikel artikel-img" src="assets/images/job.jpg" alt="">
 							</div>
 							<div class="p-3 pb-0">
 								<h4><span class="artikel badge">Kategori</span></h4>
@@ -88,7 +88,7 @@
 					<div class="border rounded h-100 d-flex flex-column justify-content-between pb-3" style="background-color:#ffff">
 						<div class="overflow-hidden card-custom">
 							<div class="position-relative rounded-top overflow-hidden over-shadow" style="margin:15px">
-								<img class="artikel artikel-img" src="assets/images/job.png" alt="">
+								<img class="artikel artikel-img" src="assets/images/job.jpg" alt="">
 							</div>
 							<div class="p-3 pb-0">
 								<h4><span class="artikel badge">Kategori</span></h4>
@@ -103,7 +103,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> --}}
 
 @include('templates.footer')
 
