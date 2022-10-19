@@ -1,8 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Bimbingan;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaaController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +21,14 @@ Route::get('/', [Home::class, 'home']);
 
 
 Route::get('/dashboard', [Bimbingan::class, 'bimbingan']);
+
+
+// PAA
+Route::get('/paa', [PaaController::class, 'index']);
+
+
+// DOsen
+Route::get('/dosen', [DosenController::class, 'index']);
+
+// Mahasiswa
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
