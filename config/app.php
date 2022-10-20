@@ -182,6 +182,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // TAMBAHAN
+        Reliese\Coders\CodersServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
