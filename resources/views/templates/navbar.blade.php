@@ -32,7 +32,7 @@
 			<?php else : ?>
 				<div class="d-grid gap-3 d-md-block">
 					{{-- <button class="btn-custom-daftar" style="margin:auto" data-bs-toggle="modal" data-bs-target="#registerModal"> REGISTER</button> --}}
-					<button class="btn-custom-login" style="margin:auto" data-bs-toggle="modal" data-bs-target="#loginModal"> LOGIN</button>
+					<button class="btn-custom-login" style="margin:auto" data-bs-toggle="modal" data-bs-target="#loginOption"> LOGIN</button>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -40,106 +40,33 @@
 </nav>
 
 
-
-{{-- 
-<!-- Modal -->
-<div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  {{---------------------------
+	 LOGIN OPTION 
+   ----------------------------}}
+  <div class="modal fade" id="loginOption" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 	  <div class="modal-content auth-modal">
 		<div class="modal-header auth-header justify-content-end mb-0">		
-			  <button type="button" class="btn-close end-0" data-bs-dismiss="modal" aria-label="Close" style="margin:5px" ></button>		   
-		</div>
+			<button type="button" class="btn-close end-0" data-bs-dismiss="modal" aria-label="Close" style="margin:5px" ></button>		   
+	  </div>
 		<div class="modal-body" style="padding:40px">
 			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
-		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Register for an account</h5>
-		 <div class="register-option justify-content-center" data-bs-toggle="modal" data-bs-target="#registerApplicant">
-			Register as Applicant
-		 </div>
-		 <div class="register-option justify-content-center" data-bs-toggle="modal" data-bs-target="#registerCompany">
-			Register as Company
-		 </div>
-			  <h5 style="font-size:12px; text-align:center; margin-top:10px;">Already have an account? <span class="modal-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</span></h5>	
+		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Log into your account</h5>
+		 <div class="register-option mt-2 mb-4" style="margin:auto" data-bs-toggle="modal" data-bs-target="#loginPAA"> Login sebagai PAA</div>
+		 <div class="register-option mt-2 mb-4" style="margin:auto" data-bs-toggle="modal" data-bs-target="#loginMahasiswa"> Login sebagai mahasiswa</div>
+		 <div class="register-option mt-2 mb-4" style="margin:auto" data-bs-toggle="modal" data-bs-target="#loginDosen"> Login sebagai dosen</div>
 		</div>
 	  </div>
 	</div>
-  </div> --}}
+  </div>
 
 
 
 
-
-
-<!-- Modal -->
-{{-- <div class="modal fade" id="registerApplicant" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-	  <div class="modal-content auth-modal">
-		<div class="modal-header auth-header justify-content-end mb-0">		
-			  <button type="button" class="btn-close end-0" data-bs-dismiss="modal" aria-label="Close" style="margin:5px" ></button>		   
-		</div>
-		<div class="modal-body" style="padding:40px">
-			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
-		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Register for an account</h5>
-		  <form action="">
-			<div class="mb-4 mt-4">
-			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
-			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
-			</div>
-			<div class="mb-4 mt-2">
-			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
-			</div>
-			<div class="mb-4 mt-2">
-			  <label for="exampleFormControlInput1" class="form-label auth-label">Confirm Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
-			</div>
-  
-			<center><button type="submit" class="register" style="margin:auto" > GET STARTED</button></center>
-		  </form>
-			  <h5 style="font-size:12px; text-align:center; margin-top:10px;">Already have an account? <span class="modal-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</span></h5>	
-		</div>
-	  </div>
-	</div>
-  </div> --}}
-
-
-
-
-  <!-- Modal -->
-{{-- <div class="modal fade" id="registerCompany" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-	  <div class="modal-content auth-modal">
-		<div class="modal-header auth-header justify-content-end mb-0">		
-			  <button type="button" class="btn-close end-0" data-bs-dismiss="modal" aria-label="Close" style="margin:5px" ></button>		   
-		</div>
-		<div class="modal-body" style="padding:40px">
-			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
-		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Register for an account</h5>
-		  <form action="">
-			<div class="mb-4 mt-4">
-			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
-			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
-			</div>
-			<div class="mb-4 mt-2">
-			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
-			</div>
-			<div class="mb-4 mt-2">
-			  <label for="exampleFormControlInput1" class="form-label auth-label">Confirm Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
-			</div>
-  
-			<center><button type="submit" class="register" style="margin:auto" > GET STARTED</button></center>
-		  </form>
-			  <h5 style="font-size:12px; text-align:center; margin-top:10px;">Already have an account? <span class="modal-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</span></h5>	
-		</div>
-	  </div>
-	</div>
-  </div> --}}
-
-
-
-  <!-- Modal -->
-<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  {{------------------------------------
+	LOGIN PAA
+	------------------------------------}}
+<div class="modal fade" id="loginPAA" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 	  <div class="modal-content auth-modal">
 		<div class="modal-header auth-header justify-content-end mb-0">		
@@ -157,13 +84,69 @@
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
 			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
 			</div>
-  
 			<center><button type="submit" class="register" style="margin:auto" >LOGIN </button></center>
 		  </form>
-  
-			   {{-- <h5 style="font-size:12px; text-align:center; margin-top:10px;">Don't have an account? <span class="modal-login" data-bs-toggle="modal" data-bs-target="#registerModal">Register</span></h5> --}}
 		</div>
-  
+	  </div>
+	</div>
+  </div>
+
+
+
+    {{------------------------------------
+	LOGIN MAHASISWA
+	------------------------------------}}
+<div class="modal fade" id="loginMahasiswa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	  <div class="modal-content auth-modal">
+		<div class="modal-header auth-header justify-content-end mb-0">		
+			<button type="button" class="btn-close end-0" data-bs-dismiss="modal" aria-label="Close" style="margin:5px" ></button>		   
+	  </div>
+		<div class="modal-body" style="padding:40px">
+			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
+		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Log into your account</h5>
+		  <form action="">
+			<div class="mb-4 mt-4">
+			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
+			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
+			</div>
+			<div class="mb-4 mt-2">
+			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
+			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
+			</div>
+			<center><button type="submit" class="register" style="margin:auto" >LOGIN </button></center>
+		  </form>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+
+
+    {{------------------------------------
+	LOGIN DOSEN
+	------------------------------------}}
+<div class="modal fade" id="loginDosen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	  <div class="modal-content auth-modal">
+		<div class="modal-header auth-header justify-content-end mb-0">		
+			<button type="button" class="btn-close end-0" data-bs-dismiss="modal" aria-label="Close" style="margin:5px" ></button>		   
+	  </div>
+		<div class="modal-body" style="padding:40px">
+			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
+		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Log into your account</h5>
+		  <form action="">
+			<div class="mb-4 mt-4">
+			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
+			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
+			</div>
+			<div class="mb-4 mt-2">
+			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
+			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
+			</div>
+			<center><button type="submit" class="register" style="margin:auto" >LOGIN </button></center>
+		  </form>
+		</div>
 	  </div>
 	</div>
   </div>
