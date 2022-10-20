@@ -1,32 +1,22 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateJadwalsidangTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'jadwalsidang';
-
-    /**
      * Run the migrations.
-     * @table jadwalsidang
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('jadwal_sidangs', function (Blueprint $table) {
             $table->increments('ID_SIDANG');
             $table->char('mahasiswa_NIM', 12);
-            $table->dateTime('WAKTU_SIDANG')->default('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()');
+            $table->dateTime('WAKTU_SIDANG');
             $table->smallInteger('STATUS_SIDANG');
             $table->string('DOSEN_PENGUJI', 100);
             $table->timestamp('CREATED_AT')->nullable()->default(null);
@@ -39,7 +29,7 @@ class CreateJadwalsidangTable extends Migration
 
 
             $table->foreign('mahasiswa_NIM', 'MENGIKUTI_FK')
-                ->references('NIM')->on('mahasiswa')
+                ->references('NIM')->on('mahasiswas')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -52,6 +42,6 @@ class CreateJadwalsidangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('jadwal_sidangs');
     }
-}
+};

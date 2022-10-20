@@ -1,29 +1,20 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateRiwayatRevisiTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'riwayat_revisi';
-
-    /**
      * Run the migrations.
-     * @table riwayat_revisi
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('riwayat_revisi', function (Blueprint $table) {
+            // $table->engine = 'InnoDB';
             $table->increments('ID_REVISI');
             $table->integer('ID_TA');
             $table->date('TANGGAL_REVISI');
@@ -39,10 +30,10 @@ class CreateRiwayatRevisiTable extends Migration
             $table->index(["ID_TA"], 'FK_RIWAYAT__TERDIRI_A_TUGAS_AK');
 
 
-            $table->foreign('ID_TA', 'FK_RIWAYAT__TERDIRI_A_TUGAS_AK')
-                ->references('ID_TA')->on('tugas_akhir')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            // $table->foreign('ID_TA', 'FK_RIWAYAT__TERDIRI_A_TUGAS_AK')
+            //     ->references('id')->on('tugas_akhirs')
+            //     ->onDelete('restrict')
+            //     ->onUpdate('restrict');
         });
     }
 
@@ -53,6 +44,6 @@ class CreateRiwayatRevisiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('riwayat_revisi');
     }
-}
+};

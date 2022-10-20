@@ -1,33 +1,23 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateDosenJadwalsidangTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'dosen_jadwalsidang';
-
-    /**
      * Run the migrations.
-     * @table dosen_jadwalsidang
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('NIP');
-            $table->integer('ID_SIDANG');
+        Schema::create('dosen_jadwal_sidangs', function (Blueprint $table) {
+            $table->string('NIP');
+            $table->increments('ID_SIDANG');
             $table->char('NILAI', 2);
-            $table->timestamp('CREATED_AT')->default('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()');
+            $table->timestamp('CREATED_AT');
             $table->timestamp('UPDATED_AT')->nullable()->default(null);
             $table->timestamp('DELETE_AT')->nullable()->default(null);
 
@@ -37,12 +27,12 @@ class CreateDosenJadwalsidangTable extends Migration
 
 
             $table->foreign('NIP', 'dosen_jadwalsidang_NIP')
-                ->references('NIP')->on('dosen')
+                ->references('NIP')->on('dosens')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
 
             $table->foreign('ID_SIDANG', 'RELATIONSHIP_7_FK')
-                ->references('ID_SIDANG')->on('jadwalsidang')
+                ->references('ID_SIDANG')->on('jadwal_sidangs')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -55,6 +45,6 @@ class CreateDosenJadwalsidangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('dosen_jadwal_sidangs');
     }
-}
+};
