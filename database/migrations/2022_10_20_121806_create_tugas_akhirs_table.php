@@ -1,29 +1,19 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateTugasAkhirTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'tugas_akhir';
-
-    /**
      * Run the migrations.
-     * @table tugas_akhir
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('tugas_akhirs', function (Blueprint $table) {
             $table->increments('ID_TA');
             $table->char('mahasiswa_NIM', 12);
             $table->string('JUDUL_TA', 100);
@@ -43,7 +33,7 @@ class CreateTugasAkhirTable extends Migration
 
 
             $table->foreign('mahasiswa_NIM', 'MENGERJAKAN_FK')
-                ->references('NIM')->on('mahasiswa')
+                ->references('NIM')->on('mahasiswas')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -56,6 +46,6 @@ class CreateTugasAkhirTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('tugas_akhirs');
     }
-}
+};

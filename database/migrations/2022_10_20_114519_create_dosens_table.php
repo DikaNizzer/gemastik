@@ -1,30 +1,21 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateDosenTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'dosen';
-
-    /**
      * Run the migrations.
-     * @table dosen
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
+        Schema::create('dosens', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('NIP');
+            $table->string('NIP');
             $table->string('NAMA_DOSEN', 100);
             $table->string('EMAIL_DOSEN', 50)->nullable()->default(null);
             $table->integer('NO_TLP_DOSEN')->nullable()->default(null);
@@ -45,6 +36,6 @@ class CreateDosenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('dosens');
     }
-}
+};

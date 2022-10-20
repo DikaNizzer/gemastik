@@ -1,35 +1,25 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateBimbinganTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'bimbingan';
-
-    /**
      * Run the migrations.
-     * @table bimbingan
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('bimbingan', function (Blueprint $table) {
             $table->increments('ID_BIMBNIGAN');
             $table->integer('ta_ID_TA');
             $table->date('TGL_BIMBINGAN');
             $table->string('KETERANGAN')->nullable()->default(null);
             $table->string('kartu', 100)->nullable()->default('null');
-            $table->timestamp('CREATED_AT')->default('CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()');
+            $table->timestamp('CREATED_AT');
             $table->timestamp('UPDATED_AT')->nullable()->default(null);
             $table->timestamp('DELETED_AT')->nullable()->default(null);
 
@@ -37,11 +27,11 @@ class CreateBimbinganTable extends Migration
 
             $table->index(["ta_ID_TA"], 'MENDAPAT_FK');
 
-
-            $table->foreign('ta_ID_TA', 'MENDAPAT_FK')
-                ->references('ID_TA')->on('tugas_akhir')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            // $table->foreign('ta_ID_TA')->references('ID_TA')->on('tugas_akhirs')->onDelete('cascade');
+            // $table->foreign('ta_ID_TA', 'MENDAPAT_FK')
+            //     ->references('ID_TA')->on('tugas_akhirs')
+            //     ->onDelete('restrict')
+            //     ->onUpdate('restrict');
         });
     }
 
@@ -52,6 +42,6 @@ class CreateBimbinganTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('bimbingan');
     }
-}
+};

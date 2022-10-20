@@ -7,8 +7,10 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
+use App\Models\Mahasiswa;
+use App\Models\Jadwalsidang;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class Dosen

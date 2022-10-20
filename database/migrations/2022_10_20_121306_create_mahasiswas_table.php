@@ -1,30 +1,20 @@
 <?php
 
-namespace Database\Migrations;
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateMahasiswaTable extends Migration
+return new class extends Migration
 {
     /**
-     * Schema table name to migrate
-     * @var string
-     */
-    public $tableName = 'mahasiswa';
-
-    /**
      * Run the migrations.
-     * @table mahasiswa
      *
      * @return void
      */
     public function up()
     {
-        Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('NIM');
+        Schema::create('mahasiswas', function (Blueprint $table) {
+            $table->string('NIM');
             $table->char('dosen_NIP', 16);
             $table->string('NAMA_MHS', 100);
             $table->string('EMAIL_MHS', 50)->nullable()->default(null);
@@ -41,7 +31,7 @@ class CreateMahasiswaTable extends Migration
 
 
             $table->foreign('dosen_NIP', 'MEMBIMBING_FK')
-                ->references('NIP')->on('dosen')
+                ->references('NIP')->on('dosens')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -54,6 +44,6 @@ class CreateMahasiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists('mahasiswas');
     }
-}
+};
