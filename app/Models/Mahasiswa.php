@@ -44,6 +44,7 @@ class Mahasiswa extends Model
 	];
 
 	protected $fillable = [
+		'NIM',
 		'dosen_NIP',
 		'NAMA_MHS',
 		'EMAIL_MHS',

@@ -16,8 +16,8 @@
             <span class="nav-link-text ms-1">Buat AKun</span>
         </div>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="">Akun Dosen</a></li>
-            <li><a class="dropdown-item" href="">Akun Mahasiswa</a></li>
+            <li><a class="dropdown-item" href="/buat-akun-dosen">Akun Dosen</a></li>
+            <li><a class="dropdown-item" href="/buat-akun-mhs">Akun Mahasiswa</a></li>
           </ul>
 
         </li>

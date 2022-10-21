@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dosen;
+use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -43,6 +44,35 @@ class PaaController extends Controller
         // dd($validatedData);
         Dosen::create($validatedData);
         return redirect('/buat-akun-dosen')->with('success', "New User Successfully Added!");
+    }
+
+    public function createMhs(){
+        $data = [
+			'title' => 'SILOLAVAIR || Dashboard PAA',
+		];
+
+        return view('paa.createMhs', [
+            'data' => $data,
+            'dosens' =>Dosen::all(),
+            'mahasiswas' => Mahasiswa::all()
+        ]);
+    }
+
+    public function storeMhs(Request $request)
+    {
+        $validatedData = $request->validate([
+            'NIM' => 'required|numeric|unique:mahasiswas',
+            'dosen_NIP' => 'required|numeric',
+            'NAMA_MHS' => 'required',
+            'EMAIL_MHS' => 'required|email:dns|unique:mahasiswas',
+            'NO_TLP_MHS' => 'required|unique:mahasiswas',
+            'ALAMAT_MHS' => 'required',
+            'PASSWORD_MHS' => 'required|min:6|max:255'
+        ]);
+        $validatedData['PASSWORD_MHS'] = Hash::make($validatedData['PASSWORD_MHS']);
+        // dd($validatedData);
+        Mahasiswa::create($validatedData);
+        return redirect('/buat-akun-mhs')->with('success', "New User Successfully Added!");
 
     }
 }

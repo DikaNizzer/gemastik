@@ -36,6 +36,10 @@ Route::get('/dosen', [DosenController::class, 'index']);
 Route::get('/buat-akun-dosen', [PaaController::class, 'create']);
 Route::post('/store-akun-dosen', [PaaController::class, 'store']);
 
+Route::get('/buat-akun-mhs', [PaaController::class, 'createMhs']);
+Route::post('/store-akun-mhs', [PaaController::class, 'storeMhs']);
+
+
 // Mahasiswa
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 
