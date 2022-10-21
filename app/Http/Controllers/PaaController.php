@@ -13,4 +13,12 @@ class PaaController extends Controller
 
         return view('paa.index', $data);
     }
+
+    public function create(){
+        $data = [
+			'title' => 'SILOLAVAIR || Dashboard PAA',
+		];
+
+        return view('paa.create', $data);
+    }
 }

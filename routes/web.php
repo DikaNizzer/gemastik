@@ -32,7 +32,8 @@ Route::get('/paa', [PaaController::class, 'index']);
 // DOsen
 Route::get('/dosen', [DosenController::class, 'index']);
 
-
+// JOBDESK WAHYU
+Route::get('/buat-akun-dosen', [PaaController::class, 'create']);
 
 // Mahasiswa
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
