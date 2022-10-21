@@ -82,12 +82,17 @@
                 </div>
                 <div class="mb-4 mt-4">
                     <label for="dosen_nip" class="form-label auth-label">NIP DOSEN PEMIMBING </label>
-                    <input class="form-control" list="datalistOptions" id="dosen_nip" placeholder="Type to search..." name="dosen_NIP" >
+                    <select name="dosen_NIP" id="" class="form-control">
+                        @foreach ($dosens as $dosen)
+                        <option value="{{ $dosen->NIP }}">{{ $dosen->NAMA_DOSEN }}</option>
+                        @endforeach
+                    </select>
+                    {{-- <input class="form-control" list="datalistOptions" id="dosen_nip" placeholder="Type to search..." name="dosen_NIP" >
                     <datalist id="datalistOptions">
                     @foreach ($dosens as $dosen)
                     <option value="{{ $dosen->NIP }}">{{ $dosen->NAMA_DOSEN }}</option>
                     @endforeach
-                    </datalist>
+                    </datalist> --}}
                 </div>
                 <div class="mb-4 mt-4">
                     <label for="nama_mhs" class="form-label auth-label">NAMA</label>
