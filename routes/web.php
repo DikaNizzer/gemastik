@@ -59,10 +59,15 @@ Route::post('/login-mahasiswa', [LoginController::class, 'authenticateMahasiswa'
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 //LOGOUT DONE
 Route::get('/logout-mahasiswa', [LoginController::class, 'logoutmahasiswa']);
-
-
 //Ambil  Data bimbingan GATAU PUNYA SIAPA
+Route::get('/anak-wali', [DosenController::class, 'getMahasiswa']);
+
+
+
+//Ambil  Data bimbingan GATAU PUNYA SIAPA LUPAA
 Route::get('/mahasiswa-bimbingan', [Bimbingan::class, 'get_bimbingan']);
+
+
 
 
 

@@ -90,7 +90,7 @@ class LoginController extends Controller
 
         $mahasiswa = Mahasiswa::where('EMAIL_MHS', $request->email)->first();
         // $santri = DB::table('santri')->where('EMAIL', $request->EMAIL)->get();
-        $dospem = Dosen::where('NIP', $mahasiswa->dosen_NIP)->first();
+        
         if($mahasiswa == null){
             return back()->with('logerror', 'Login Gagal');
         }else{
@@ -98,6 +98,7 @@ class LoginController extends Controller
                 // if(Auth::loginUsingId($santri->IDSANTRI)){
                     Auth::guard('mahasiswa')->login($mahasiswa);
                     $request->session()->regenerate();
+                    $dospem = Dosen::where('NIP', $mahasiswa->dosen_NIP)->first();
                     $request->session()->put('datamahasiswa', $mahasiswa);
                     $request->session()->put('dospem', $dospem);
                     return redirect()->intended('mahasiswa');
