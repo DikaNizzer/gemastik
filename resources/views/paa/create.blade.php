@@ -15,20 +15,42 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                          @if(session()->has('success'))
+                          <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">    
+                              <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+                                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                              </symbol>
+                              </svg>
+                              
+                          <div class="alert d-flex align-items-center" role="alert" style="background-color: rgba(27, 219, 224, 0.2)">
+                              <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                              <div>
+                                  {{ session('success') }}
+                              </div>
+                          </div>
+                          @endif
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>NIP</th>
+                                        <th>Nama</th>
                                         <th>Email</th>
                                         <th>No Telp</th>
                                         <th>Alamat</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-   
-                                    </tr>                                
+                                  @foreach ($dosens as $dosen)
+                                  <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $dosen->NIP }}</td>
+                                    <td>{{ $dosen->NAMA_DOSEN }}</td>
+                                    <td>{{ $dosen->EMAIL_DOSEN }}</td>
+                                    <td>{{ $dosen->NO_TLP_DOSEN }}</td>
+                                    <td>{{ $dosen->ALAMAT_DOSEN }}</td>
+                                </tr>   
+                                  @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -52,25 +74,42 @@
             <div class="modal-body" style="padding:40px">
                 <center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
               <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Buat AKun Dosen</h5>
-              <form action="upload-ta" method="post" enctype="multipart/form-data">
+              <form action="/store-akun-dosen" method="post" >
                 @csrf
                 <div class="mb-4 mt-4">
-                  <label for="exampleFormControlInput1" class="form-label auth-label">NIP </label>
-                  <input class="form-control auth-form" type="text" name="JUDUL_TA" aria-label="default input example" required>
+                  <label for="nip" class="form-label auth-label">NIP </label>
+                  <input class="form-control auth-form" id="nip" type="text" name="NIP" aria-label="default input example" >
                 </div>
                 <div class="mb-4 mt-4">
-                    <label for="exampleFormControlInput1" class="form-label auth-label">NAMA </label>
-                    <input class="form-control auth-form" type="text" name="JUDUL_TA" aria-label="default input example" required>
+                    <label for="nama_dosen" class="form-label auth-label">NAMA </label>
+                    <input class="form-control auth-form" id="nama_dosen" type="text" name="NAMA_DOSEN" aria-label="default input example">
                 </div>
                 <div class="mb-4 mt-4">
-                    <label for="exampleFormControlInput1" class="form-label auth-label">EMAIL </label>
-                    <input class="form-control auth-form" type="text" name="JUDUL_TA" aria-label="default input example" required>
-                  </div>
-                  <div class="mb-4 mt-4">
-                    <label for="exampleFormControlInput1" class="form-label auth-label">Lanjutin </label>
-                    <input class="form-control auth-form" type="text" name="JUDUL_TA" aria-label="default input example" required>
-                  </div>
-                <center><button type="submit" class="register mt-4" style="margin:auto" >BUAT</button></center>
+                    <label for="email_dosen" class="form-label auth-label">EMAIL </label>
+                    <input class="form-control auth-form" id="email_dosen" type="text" name="EMAIL_DOSEN" aria-label="default input example" >
+                </div>
+                <div class="mb-4 mt-4">
+                    <label for="Telp_dosen" class="form-label auth-label">NO. TELEFON </label>
+                    <input class="form-control auth-form" id="telp_dosen" type="number" name="NO_TLP_DOSEN" aria-label="default input example" >
+                </div>
+                <div class="mb-4 mt-4">
+                    <label for="alamat_dosen" class="form-label auth-label">Alamat </label>
+                    <input class="form-control auth-form" id="alamat_dosen" type="text" name="ALAMAT_DOSEN" aria-label="default input example" >
+                </div>
+                <div class="mb-4 mt-4">
+                    <label for="pass-dosen" class="form-label auth-label"> PASSWORD</label>
+                    <input class="form-control auth-form" id="pass_dosen" type="password" name="PASSWORD_DOSEN" aria-label="default input example" >
+                </div>
+                @if ($errors->any())
+                <div class="alert" style="background-color:rgba(255, 77, 107, 0.2)">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+                @endif
+                <center><button type="submit" class="btn btn-primary px-3" style="margin:left" >Tambah Data</button></center>
               </form>
             </div>
           </div>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('NIP');
             $table->string('NAMA_DOSEN', 100);
             $table->string('EMAIL_DOSEN', 50)->nullable()->default(null);
-            $table->integer('NO_TLP_DOSEN')->nullable()->default(null);
+            $table->string('NO_TLP_DOSEN')->nullable()->default(null);
             $table->string('ALAMAT_DOSEN', 100)->nullable()->default(null);
             $table->string('PASSWORD_DOSEN', 100);
             $table->timestamp('UPDATED_AT')->nullable()->default(null);

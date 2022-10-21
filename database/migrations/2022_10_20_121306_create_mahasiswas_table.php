@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->string('NIM');
-            $table->char('dosen_NIP', 16);
+            $table->string('dosen_NIP');
             $table->string('NAMA_MHS', 100);
             $table->string('EMAIL_MHS', 50)->nullable()->default(null);
             $table->string('NO_TLP_MHS', 13)->nullable()->default(null);
