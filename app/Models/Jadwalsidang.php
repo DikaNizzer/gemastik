@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Jadwalsidang extends Model
 {
-	protected $table = 'jadwalsidang';
+	protected $table = 'jadwal_sidangs';
 	protected $primaryKey = 'ID_SIDANG';
 	public $incrementing = false;
 	public $timestamps = false;

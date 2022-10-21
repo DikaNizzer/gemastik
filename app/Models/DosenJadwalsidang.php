@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class DosenJadwalsidang extends Model
 {
-	protected $table = 'dosen_jadwalsidang';
+	protected $table = 'dosen_jadwal_sidangs';
 	public $incrementing = false;
 	public $timestamps = false;
 

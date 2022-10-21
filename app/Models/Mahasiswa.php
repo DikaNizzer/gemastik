@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Mahasiswa extends Model
 {
-	protected $table = 'mahasiswa';
+	protected $table = 'mahasiswas';
 	protected $primaryKey = 'NIM';
 	public $incrementing = false;
 	public $timestamps = false;

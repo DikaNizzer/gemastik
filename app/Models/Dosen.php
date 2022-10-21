@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\Collection;
  */
 class Dosen extends Model
 {
-	protected $table = 'dosen';
+	protected $table = 'dosens';
 	protected $primaryKey = 'NIP';
 	public $incrementing = false;
 	public $timestamps = false;
@@ -48,6 +48,7 @@ class Dosen extends Model
 	];
 
 	protected $fillable = [
+		'NIP',
 		'NAMA_DOSEN',
 		'EMAIL_DOSEN',
 		'NO_TLP_DOSEN',
