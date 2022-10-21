@@ -59,9 +59,10 @@ Route::post('/login-mahasiswa', [LoginController::class, 'authenticateMahasiswa'
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 //LOGOUT DONE
 Route::get('/logout-mahasiswa', [LoginController::class, 'logoutmahasiswa']);
-//Ambil  Data bimbingan GATAU PUNYA SIAPA
+//Ambil  Data bimbingan DARI DOSEN DIKA DONE
 Route::get('/anak-wali', [DosenController::class, 'getMahasiswa']);
-
+// AMBIL DATA TA MHS
+Route::get('/pengajuan-ta', [DosenController::class, 'getTA']);
 
 
 //Ambil  Data bimbingan GATAU PUNYA SIAPA LUPAA

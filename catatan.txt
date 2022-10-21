@@ -1,3 +1,10 @@
 1. Create Akun PAA Inject LAngsung
 INSERT INTO `gemastik`.`paa` (`NAMA_PAA`, `EMAIL_PAA`, `NO_TLP_PAA`, `ALAMAT_PAA`, `PASSWORD`) 
 VALUES ('nama PAA', 'adminpaa@gmail.com', '12345', 'surabaya', '$2y$10$rsUw6AZKN4HmZBdDcVpf.eCF8G.lrOFPPRCeMBxo2Z5RgoOr6Msdm');
+
+JADI NANTI SETELAH DI RUN
+LOGIN PAA DENGAN USER adminpaa@gmail.com
+Pass : 12345
+Terus Buat Akun DOSEN
+Terus BUAT AKUN MHS
+Perbaiki Index setiap ROle

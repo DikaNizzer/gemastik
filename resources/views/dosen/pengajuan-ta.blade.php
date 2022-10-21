@@ -1,5 +1,5 @@
-@include('mhs.dashboard-header')
-@include('mhs.sidebar')
+@include('dosen.dashboard-header')
+@include('dosen.sidebar')
 
 
 <?php
@@ -7,9 +7,7 @@ $counter = 1;
 ?>
 <section>
     <div class="container" style="padding:30px;">
-        <h4 style="color:#ffff">Tugas Akhir</h4>
-        <div><button type="button" data-bs-toggle="modal" data-bs-target="#create-ta" class="btn btn-primary"> Add +</button>
-                <!-- DataTales Example -->
+        <br><br><br><br><br>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                     </div>
@@ -19,27 +17,25 @@ $counter = 1;
                                 <thead>
                                     <tr>
                                         <th style="width:10px">No</th>
+                                        <th>NIM</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>No Telp</th>
                                         <th>Judul TA</th>
-                                        <th>Tanggal Pengajuan</th>
-                                        <th>Laporan Awal</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody >
-                                    @foreach ($tugasAkhir as $data)
+                                    @foreach ($mahasiswa as $data)
                                     <tr>
                                         <th>{{ $counter }}</th>
-                                        <th>{{ $data -> JUDUL_TA }}</th>
-                                        <th>{{ date('d F Y', strtotime($data->TGL_PENGAJUAN)); }}</th>
-                                        <th>{{ $data -> laporan_awal }}</th>
-                                        <th>
-                                            @if ($data -> STATUS_TA === 1)
-                                                <span style="color:rgb(0, 216, 0)">Disetujui</span>
-                                                @else
-                                                <span style="color:rgb(53, 134, 255)">Belum Disetujui</span>                      
-                                            @endif
-                                        </th>
-   
+                                        <th>{{ $data ->NIM }}</th>
+                                        <th>{{ $data->NAMA_MHS }}</th>
+                                        <th>{{ $data ->EMAIL_MHS }}</th>
+                                        <th>{{ $data ->NO_TLP_MHS }}</th>
+                                        @foreach($data->tugas_akhirs as $ta)
+                                            {{-- {{$ta->JUDUL_TA}} --}}
+                                            <th>{{ $ta->JUDUL_TA }}</th>
+                                        @endforeach
                                     </tr>  
                                    <?php $counter++ ?>
                                     @endforeach                              
@@ -75,7 +71,7 @@ $counter = 1;
                   <input class="form-control auth-form" type="text" name="JUDUL_TA" aria-label="default input example" required>
                 </div>
                 <div class="mb-4 mt-4" >
-                    <input class="form-control auth-form" type="hidden" name="mahasiswa_NIM" aria-label="default input example" value="{{session()->get('datamahasiswa')->NIM}}">
+                    <input class="form-control auth-form" type="hidden" name="mahasiswa_NIM" aria-label="default input example" value="152011513024">
                 </div>
                 <div class="mb-3">
                     <label for="file" class="form-label">Laporan Awal</label><br/>

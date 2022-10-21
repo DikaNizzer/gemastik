@@ -31,7 +31,7 @@ $counter = 1;
                                         <th>{{ $data->NAMA_MHS }}</th>
                                         <th>{{ $data ->EMAIL_MHS }}</th>
                                         <th>{{ $data ->NO_TLP_MHS }}</th>
-   
+                                       
                                     </tr>  
                                    <?php $counter++ ?>
                                     @endforeach                              

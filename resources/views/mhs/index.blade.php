@@ -13,6 +13,7 @@
                     </div>
                     <div class="card-body">
                         {{-- {{var_dump(session()->get('datamahasiswa'))}}; --}}
+                        {{session()->get('datamahasiswa')->NIM}}
                         {{session()->get('datamahasiswa')->NAMA_MHS}}
                         {{session()->get('datamahasiswa')->EMAIL_MHS}}
                         {{session()->get('datamahasiswa')->NO_TLP_MHS}}
