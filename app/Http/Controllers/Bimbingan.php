@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class Bimbingan extends Controller
 {
     //
-    public function bimbingan(){
+    public function get_bimbingan(){
         $data = [
 			'title' => 'SILOLAVAIR || Dashboard',
 		];
 
-        return view('dashboard.bimbingan', $data);
+        return view('mhs.bimbingan', $data);
     }
 }

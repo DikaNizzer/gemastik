@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tugas_akhirs', function (Blueprint $table) {
+        Schema::create('tugas_akhir', function (Blueprint $table) {
             $table->increments('ID_TA');
             $table->char('mahasiswa_NIM', 12);
             $table->string('JUDUL_TA', 100);

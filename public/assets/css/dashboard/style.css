@@ -1,0 +1,165 @@
+
+
+.btn-custom-daftar {
+	color: #6D0CBA;
+    /* background:linear-gradient(180deg, #D90000 0%, #B606BA 100%); */
+    background: #00000000;
+    border: 2px solid #6D0CBA;
+	border-radius: 30px 0px 30px 30px;
+    height:40px;
+	width:110px;
+	font-weight:700;
+}
+
+.btn-custom-login {
+    background:#6D0CBA;
+	color: #ffff;
+	border-radius: 0px 30px 30px 30px;
+    border: 2px solid #6D0CBA;
+	height:40px;
+	width:110px;
+	font-weight:700;
+}
+
+
+
+
+.get-started{
+    margin-top:20px;
+    width:200px;
+    height:60px;
+    color:#ffff;
+    border-radius:0px 30px 30px 30px;
+    border: 2px solid #ffff;
+    font-size:20px;
+    font-weight:700;
+    text-align:center;
+    padding:10px;
+    background:rgba(255, 255, 255, 0);
+}
+
+
+.register{
+    width:80%;
+    height:40px;
+    color:#ffff;
+    border-radius:0px 30px 30px 30px;
+    border:none;
+    margin:auto;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+    padding:auto;
+    background:#6D0CBA;
+}
+
+.modal-login{
+    background-color: #00000000;
+    color:#9C39FF;
+    border:none;
+}
+
+.modal-login:hover{
+    color:#6D0CBA;
+    font-weight:700;
+}
+
+
+.btn-custom-daftar:hover,
+.btn-custom-login:hover,
+.register:hover,
+.register-option:hover{
+    background: #9C39FF;
+    color:#ffffff;
+    border:none;
+}
+
+.get-started:hover{
+    color: #9C39FF;
+    background-color: #ffff;
+}
+
+
+
+
+.footer-top{
+    min-height:50px;
+    height:auto;
+    width:100%;
+    background-color: #6D0CBA;
+    color:#ffff;
+    padding:15px;
+}
+
+.footer-top h5{
+    text-align:center;
+    font-size:14px;
+    font-weight:700;
+    justify-content:center;
+    margin:auto;
+}
+
+
+.auth-modal{
+    border-radius:30px;
+    margin:auto;
+}
+
+
+.auth-header{
+ border:none;
+ padding-bottom:0px;
+}
+
+.auth-label{
+    font-size:14px;
+    font-weight:600;
+    color:#6D0CBA;
+}
+
+.auth-form{
+    border-radius:40px;
+    border: 1px solid #e7e6e6;
+    /* border:none; */
+    font-size:14px;
+    height:40px;
+    color:#e7e6e6;
+    /* background-color:#f4f4f4 */
+}
+
+
+
+
+.auth-form:hover{
+    background-color:#00000000;
+    border: 1px solid #6D0CBA;
+}
+
+
+.auth-form:focus,
+.auth-form:active{
+    background-color:#00000000;
+    border: 1px solid #6D0CBA;
+    box-shadow:none;
+}
+
+
+
+
+.register-option{
+    width:100%;
+    height:50px;
+    border-radius: 10px;
+    color:#ffff;
+    background-color: #6D0CBA;
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    font-weight:500;
+    margin:auto;
+    margin-bottom:20px;
+    padding:10px;
+}
+
+
+

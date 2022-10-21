@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Bimbingan;
+use App\Http\Controllers\TugasAkhirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaaController;
 use App\Http\Controllers\DosenController;
@@ -20,7 +21,8 @@ use App\Http\Controllers\MahasiswaController;
 Route::get('/', [Home::class, 'home']);
 
 
-Route::get('/dashboard', [Bimbingan::class, 'bimbingan']);
+//bimbingan
+Route::get('/mahasiswa-bimbingan', [Bimbingan::class, 'get_bimbingan']);
 
 
 // PAA
@@ -30,5 +32,13 @@ Route::get('/paa', [PaaController::class, 'index']);
 // DOsen
 Route::get('/dosen', [DosenController::class, 'index']);
 
+
+
 // Mahasiswa
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+
+
+
+//Tugas AKhir
+Route::get('/mahasiswa-ta', [TugasAkhirController::class, 'get_ta']);
+Route::post('/upload-ta', [TugasAkhirController::class, 'create_ta']);

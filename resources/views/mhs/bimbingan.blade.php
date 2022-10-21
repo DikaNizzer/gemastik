@@ -1,5 +1,5 @@
-@include('mhs\dashboard-header')
-@include('mhs\sidebar')
+@include('mhs.dashboard-header')
+@include('mhs.sidebar')
 
 
 

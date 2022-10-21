@@ -23,7 +23,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link  <?= !!strpos($_SERVER['REQUEST_URI'], 'tugas_akhir') ? 'active' : '' ?>" href="mahasiswa-ta">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <iconify-icon icon="fa6-solid:book-open" style="color: #6d0cba;"></iconify-icon>
           </div>
@@ -39,7 +39,7 @@
           </a>
         </li>
       <li class="nav-item">
-        <a class="nav-link active" href="">
+        <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'bimbingan') ? 'active' : '' ?> " href="mahasiswa-bimbingan">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <iconify-icon icon="bi:file-earmark-text-fill" style="color: #6d0cba;" width="18"></iconify-icon>
           </div>
@@ -106,3 +106,12 @@
       </div>
     </div>
   </nav>
+
+
+
+  <script>
+    $(".nav-link").on("click", function() {
+    $(".nav-link").find(".active").removeClass("active");
+    $(this).parent().addClass("active");
+  });
+  </script>
