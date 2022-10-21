@@ -1,3 +1,16 @@
+<?php
+// var_dump(session()->get('datapaa'));
+
+if( is_null(session()->get('datapaa')) ){
+
+  echo "<script> 
+        alert('Anda haru login terlebih dahulu !');
+        document.location.href = '/';
+        </script>";
+        exit();
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

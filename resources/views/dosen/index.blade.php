@@ -5,8 +5,7 @@
 
 <section>
     <div class="container" style="padding:30px;">
-        <h4 style="color:#ffff">Bimbingan</h4>
-        <div><a href="/form-create-pengurus"><button class="btn btn-primary " type="submit">Add</button></div></a>
+        
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -14,23 +13,9 @@
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Tanggal</th>
-                                        <th>Keterangan</th>
-                                        <th>Kartu Kendali</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-   
-                                    </tr>                                
-                                </tbody>
-                            </table>
-                        </div>
+                        {{session()->get('datadosen')->NIP}}
+                        {{session()->get('datadosen')->NAMA_DOSEN}}
+                        {{session()->get('datadosen')->EMAIL_DOSEN}}
                     </div>
                 </div>
     </div>

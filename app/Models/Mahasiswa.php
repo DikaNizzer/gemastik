@@ -9,7 +9,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 /**
  * Class Mahasiswa
  * 
@@ -30,7 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Mahasiswa extends Model
+class Mahasiswa extends Authenticatable
 {
 	protected $table = 'mahasiswas';
 	protected $primaryKey = 'NIM';

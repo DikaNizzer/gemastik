@@ -39,7 +39,15 @@
 	</div>
 </nav>
 
-
+@if ($errors->any())
+<div class="alert" style="background-color:rgba(255, 77, 107, 0.2)">
+	<ul>
+	@foreach ($errors->all() as $error)
+	<li>{{ $error }}</li>
+	@endforeach
+	</ul>
+</div>
+@endif
   {{---------------------------
 	 LOGIN OPTION 
    ----------------------------}}
@@ -75,14 +83,15 @@
 		<div class="modal-body" style="padding:40px">
 			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
 		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Log into your account</h5>
-		  <form action="">
+		  <form action="/login-paa" method="POST" >
+			@csrf
 			<div class="mb-4 mt-4">
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
-			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
+			  <input class="form-control auth-form" name="email" type="email" aria-label="default input example" required>
 			</div>
 			<div class="mb-4 mt-2">
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
+			  <input class="form-control auth-form" name="password" type="password" aria-label="default input example" required>
 			</div>
 			<center><button type="submit" class="register" style="margin:auto" >LOGIN </button></center>
 		  </form>
@@ -105,14 +114,15 @@
 		<div class="modal-body" style="padding:40px">
 			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
 		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Log into your account</h5>
-		  <form action="">
+		  <form action="/login-mahasiswa" method="POST" >
+			@csrf
 			<div class="mb-4 mt-4">
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
-			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
+			  <input class="form-control auth-form" name="email" type="email" aria-label="default input example" required>
 			</div>
 			<div class="mb-4 mt-2">
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
+			  <input class="form-control auth-form" name="password" type="password" aria-label="default input example" required>
 			</div>
 			<center><button type="submit" class="register" style="margin:auto" >LOGIN </button></center>
 		  </form>
@@ -135,14 +145,15 @@
 		<div class="modal-body" style="padding:40px">
 			<center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
 		  <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Log into your account</h5>
-		  <form action="">
+		  <form action="/login-dosen" method="POST" >
+			@csrf
 			<div class="mb-4 mt-4">
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Email </label>
-			  <input class="form-control auth-form" type="email" aria-label="default input example" required>
+			  <input class="form-control auth-form" name="email" type="email" aria-label="default input example" required>
 			</div>
 			<div class="mb-4 mt-2">
 			  <label for="exampleFormControlInput1" class="form-label auth-label">Password </label>
-			  <input class="form-control auth-form" type="password" aria-label="default input example" required>
+			  <input class="form-control auth-form" name="password" type="password" aria-label="default input example" required>
 			</div>
 			<center><button type="submit" class="register" style="margin:auto" >LOGIN </button></center>
 		  </form>

@@ -8,38 +8,21 @@
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " style="height:auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <div class="nav-link " data-bs-toggle="dropdown" >
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <iconify-icon icon="bi:people-fill" style="color: #6d0cba;"></iconify-icon>
-            </div>
-            <span class="nav-link-text ms-1">Buat AKun</span>
-        </div>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/buat-akun-dosen">Akun Dosen</a></li>
-            <li><a class="dropdown-item" href="/buat-akun-mhs">Akun Mahasiswa</a></li>
-          </ul>
 
-        </li>
         <li class="nav-item">
-          <div class="nav-link " data-bs-toggle="dropdown" >
+          <a class="nav-link " href="/buat-akun-dosen">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <iconify-icon icon="bi:people-fill" style="color: #6d0cba;"></iconify-icon>
+              <iconify-icon icon="bi:people-fill" style="color: #6d0cba;"></iconify-icon>
             </div>
             <span class="nav-link-text ms-1">Data Dosen</span>
-        </div>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="">Dosen Pembimbing</a></li>
-            <li><a class="dropdown-item" href="">Dosen Penguji</a></li>
-          </ul>
-
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="">
+            <a class="nav-link " href="/buat-akun-mhs">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <iconify-icon icon="bi:people-fill" style="color: #6d0cba;"></iconify-icon>
               </div>
-              <span class="nav-link-text ms-1">Mahasiswa</span>
+              <span class="nav-link-text ms-1">Data Mahasiswa</span>
             </a>
           </li>
         <li class="nav-item">
@@ -93,9 +76,9 @@
           </div> --}}
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+              <a href="/logout-paa" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
+                <span class="d-sm-inline d-none">Logout</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

@@ -8,23 +8,10 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-/**
- * Class Paa
- * 
- * @property int $ID_PAA
- * @property string $NAMA_PAA
- * @property string|null $EMAIL_PAA
- * @property int|null $NO_TLP_PAA
- * @property string|null $ALAMAT_PAA
- * @property string $PASSWORD
- * @property Carbon|null $UPDATED_AT
- * @property Carbon|null $CREATED_AT
- * @property Carbon|null $DELETED_AT
- *
- * @package App\Models
- */
-class Paa extends Model
+
+class Paa extends Authenticatable 
 {
 	protected $table = 'paa';
 	protected $primaryKey = 'ID_PAA';

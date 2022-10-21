@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'paa',
     ],
 
     /*
@@ -38,7 +38,21 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'paa',
+        ],
+
+        'paa' => [
+            'driver' => 'session',
+            'provider' => 'paa',
+        ],
+
+        'dosen' => [
+            'driver' => 'session',
+            'provider' => 'dosen',
+        ],
+        'mahasiswa' => [
+            'driver' => 'session',
+            'provider' => 'mahasiswa',
         ],
     ],
 
@@ -60,9 +74,24 @@ return [
     */
 
     'providers' => [
+
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Paa::class, //'model' => App\Models\User::class,
+        ],
+
+        'paa' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Paa::class,
+        ],
+
+        'dosen' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Dosen::class,
+        ],
+        'mahasiswa' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Mahasiswa::class,
         ],
 
         // 'users' => [

@@ -1,3 +1,15 @@
+<?php
+if( is_null(session()->get('datamahasiswa')) ){
+
+echo "<script> 
+      alert('Anda haru login terlebih dahulu !');
+      document.location.href = '/';
+      </script>";
+      exit();
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

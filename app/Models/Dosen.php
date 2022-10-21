@@ -11,6 +11,7 @@ use App\Models\Mahasiswa;
 use App\Models\Jadwalsidang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Dosen
@@ -30,7 +31,7 @@ use Illuminate\Database\Eloquent\Collection;
  *
  * @package App\Models
  */
-class Dosen extends Model
+class Dosen extends Authenticatable
 {
 	protected $table = 'dosens';
 	protected $primaryKey = 'NIP';

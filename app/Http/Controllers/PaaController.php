@@ -37,7 +37,7 @@ class PaaController extends Controller
             'EMAIL_DOSEN' => 'required|email:dns|unique:dosens',
             'NO_TLP_DOSEN' => 'required|unique:dosens',
             'ALAMAT_DOSEN' => 'required',
-            'PASSWORD_DOSEN' => 'required|min:6|max:255'
+            'PASSWORD_DOSEN' => 'required|min:5|max:255'
         ]);
 
         $validatedData['PASSWORD_DOSEN'] = Hash::make($validatedData['PASSWORD_DOSEN']);
@@ -67,7 +67,7 @@ class PaaController extends Controller
             'EMAIL_MHS' => 'required|email:dns|unique:mahasiswas',
             'NO_TLP_MHS' => 'required|unique:mahasiswas',
             'ALAMAT_MHS' => 'required',
-            'PASSWORD_MHS' => 'required|min:6|max:255'
+            'PASSWORD_MHS' => 'required|min:5|max:255'
         ]);
         $validatedData['PASSWORD_MHS'] = Hash::make($validatedData['PASSWORD_MHS']);
         // dd($validatedData);
