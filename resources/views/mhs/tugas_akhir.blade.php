@@ -38,7 +38,9 @@ $counter = 1;
                                                 @elseif ($data ->STATUS_TA === 0)
                                                     <span style="color:rgb(53, 134, 255)">Belum Disetujui</span>
                                                     @elseif ($data ->STATUS_TA === 2)
-                                                    <span style="color:rgb(221, 26, 26)">Ditolak</span>                     
+                                                    <span style="color:rgb(221, 26, 26)">Ditolak</span>   
+                                                    @elseif ($data ->STATUS_TA === 3)
+                                                    <span style="color:rgb(221, 26, 26)">Proses Pengajuan Sidang</span>                     
                                             @endif
                                         </th>
    

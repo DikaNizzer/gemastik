@@ -7,7 +7,7 @@ $counter = 1;
 
 <section>
     <div class="container" style="padding:30px;">
-        <h4 style="color:#ffff">Bimbingan </h4>
+        <h4 style="color:#ffff">Pengajuan Sidang </h4>
         <div><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#create-bimbingan">Add +</button></div>
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
@@ -20,23 +20,26 @@ $counter = 1;
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Tanggal</th>
-                                        <th>Keterangan</th>
-                                        <th>Kartu Kendali</th>
+                                        <th>No </th>
+                                        <th>Lembar Pengesahan</th>
+                                        <th>Laporan FInal Ta</th>
+                                        <th>Tanggal Pengajuan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($bimbingan as $data)
+                                    @if(blank($laporanAkhir))
+                                        <tr><b>Belum ada sidang yang dijadwalkan</b></tr>
+                                    @else
+                                    {{-- @foreach ($datasidang as $data) --}}
+                                        
                                     <tr>
-                                        <th>{{ $counter }}</th>
-                                        <th>{{ date('d F Y', strtotime($data->TGL_BIMBINGAN)); }}</th>
-                                        <th> {{ $data->KETERANGAN}}</th>
-                                        <th><a href="uploads/{{ $data->kartu}}"><button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button></a></th>
-   
+                                        <th>1</th>
+                                        <th><a href="uploads/LEMBAR_PENGESAHAN/{{ $lembarPengesahan}}"><button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button></a></th>
+                                        <th><a href="uploads/LAPORAN_FINALTA/{{ $laporanAkhir}}"><button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button></a></th>
+                                        <th> {{ date('d F Y', strtotime($tanggal)); }}</th>
                                     </tr>  
-                                   <?php $counter++ ?>
-                                    @endforeach                                             
+                                   {{-- <?php $counter++ ?> --}}
+                                    @endif                                             
                                 </tbody>
                             </table>
                         </div>
@@ -59,23 +62,17 @@ $counter = 1;
           </div>
             <div class="modal-body" style="padding:40px">
                 <center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
-              <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Upload Tugas Akhir</h5>
-              <form action="upload-bimbingan" method="post" enctype="multipart/form-data">
+              <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Lengkapi Berkas Tugas Akhir</h5>
+              <form action="update-ta" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="mb-4 mt-4">
-                  <label for="exampleFormControlInput1" class="form-label auth-label">Keterangan bimbingan </label>
-                  <input class="form-control auth-form" type="text" name="KETERANGAN" aria-label="default input example" required>
-                </div>
-                <div class="mb-4 mt-4">
-                    <label for="exampleFormControlInput1" class="form-label auth-label">Keterangan bimbingan </label>
-                    <input class="form-control auth-form" type="date" name="TGL_BIMBINGAN" aria-label="default input example" required>
-                  </div>
-                  <div class="mb-4 mt-4" >
-                    <input class="form-control auth-form" type="hidden" name="ta_ID_TA" aria-label="default input example" value="{{ $idta }}">
+                
+                <div class="mb-3">
+                    <label for="file" class="form-label">Upload Lembar Pengesahan</label><br/>
+                    <input class="form-control" type="file" id="file" name="LEMBAR_PENGESAHAN" >
                 </div>
                 <div class="mb-3">
-                    <label for="file" class="form-label">Laporan Awal</label><br/>
-                    <input class="form-control" type="file" id="file" name="kartu" >
+                    <label for="file" class="form-label">Upload Laporan Final TA</label><br/>
+                    <input class="form-control" type="file" id="file" name="LAPORAN_FINAL_TA" >
                 </div>
                 <center><button type="submit" class="register mt-4" style="margin:auto" >UPLOAD</button></center>
               </form>

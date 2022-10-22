@@ -50,7 +50,7 @@ class DosenController extends Controller
 			'title' => 'SILOLAVAIR || Dashboard Dosen',
 		];
 
-        var_dump($idta, $status);
+        // var_dump($idta, $status);
         TugasAkhir::where('ID_TA', $idta)
         ->update(['STATUS_TA' => $status]);
 

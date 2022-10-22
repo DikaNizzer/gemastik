@@ -70,6 +70,10 @@ Route::get('/ubah-status/{idta}/{status}', [DosenController::class, 'updateStatu
 Route::get('/mahasiswa-bimbingan', [BimbinganController::class, 'get_bimbingan']);
 // Input Data Bimbingan
 Route::post('/upload-bimbingan', [MahasiswaController::class, 'createBimbingan']);
+//Ambil  Data Sidang
+Route::get('/ajukan-sidang', [MahasiswaController::class, 'getSidang']);
+// Update kekurangan data ta untuk sidang
+Route::post('/update-ta', [MahasiswaController::class, 'updateTa']);
 
 
 
