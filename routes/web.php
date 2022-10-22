@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\Home;
-use App\Http\Controllers\Bimbingan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BimbinganController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\TugasAkhirController;
 /*
@@ -66,12 +66,10 @@ Route::get('/pengajuan-ta', [DosenController::class, 'getTA']);
 // UBAH STATUS TA DARI DOSEN
 Route::get('/ubah-status/{idta}/{status}', [DosenController::class, 'updateStatus']);
 
-
-
-
-
-//Ambil  Data bimbingan GATAU PUNYA SIAPA LUPAA
-Route::get('/mahasiswa-bimbingan', [Bimbingan::class, 'get_bimbingan']);
+//Ambil  Data bimbingan PUNYA LIA
+Route::get('/mahasiswa-bimbingan', [BimbinganController::class, 'get_bimbingan']);
+// Input Data Bimbingan
+Route::post('/upload-bimbingan', [MahasiswaController::class, 'createBimbingan']);
 
 
 

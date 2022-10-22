@@ -37,15 +37,7 @@
           </div>
           <span class="nav-link-text ms-1">Tugas Akhir</span>
         </a>
-      </li>
-        <li class="nav-item">
-          <a class="nav-link " href="">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <iconify-icon icon="fluent:document-28-filled" width="18" style="color: #6d0cba;"></iconify-icon>
-            </div>
-            <span class="nav-link-text ms-1">Pengajuan Sidang</span>
-          </a>
-        </li>
+      
       <li class="nav-item">
         <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'bimbingan') ? 'active' : '' ?> " href="mahasiswa-bimbingan">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -62,6 +54,15 @@
             <span class="nav-link-text ms-1">Riwayat Revisi</span>
           </a>
         </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <iconify-icon icon="fluent:document-28-filled" width="18" style="color: #6d0cba;"></iconify-icon>
+          </div>
+          <span class="nav-link-text ms-1">Pengajuan Sidang</span>
+        </a>
+      </li>
 
         <li class="nav-item">
           <a class="nav-link " href="">
