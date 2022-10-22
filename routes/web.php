@@ -75,9 +75,11 @@ Route::get('/ajukan-sidang', [MahasiswaController::class, 'getSidang']);
 // Update kekurangan data ta untuk sidang
 Route::post('/update-ta', [MahasiswaController::class, 'updateTa']);
 
-
 //Ambil Data Ta yang disetujui
 Route::get('/ta-acc', [DosenController::class, 'taAcc']);
+
+//Ambil Data Ta yang maju sidang di PAA
+Route::get('/paa-sidang', [PaaController::class, 'getSidang']);
 
 
 

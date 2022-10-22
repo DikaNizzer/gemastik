@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\TugasAkhir;
+use App\Models\Jadwalsidang;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -73,6 +76,39 @@ class PaaController extends Controller
         // dd($validatedData);
         Mahasiswa::create($validatedData);
         return redirect('/buat-akun-mhs')->with('success', "New User Successfully Added!");
+
+    }
+
+    public function getSidang(){
+        
+
+        // Cek Sudah Mengajukan TA Belum
+        // $mahasiswa = TugasAkhir::whereNotNull('LAPORAN_FINAL_TA')->where('STATUS_TA', 1)->get();
+        $mahasiswa = Mahasiswa::with(['tugas_akhirs'=>function($query){
+            $query->where('STATUS_TA' , '=', '1')->whereNotNull('LAPORAN_FINAL_TA');
+          }])->get();
+        //   dd($mahasiswa);
+        // Cek Jumlah Bimbingan
+        foreach($mahasiswa as $ta){
+                
+        }
+        
+        // dd($jumlahBimbingan);
+        // $sidang = Jadwalsidang::where('mahasiswa_NIM', session()->get('datamahasiswa')->NIM)->get();
+       
+
+            $data = [
+                'title' => 'SILOLAVAIR || Dashboard',
+                // 'datasidang' => $sidang,
+                'lembarPengesahan' => $ta->LEMBAR_PENGESAHAN,
+                'laporanAkhir' => $ta->LAPORAN_FINAL_TA,
+                'tanggal' => $ta->pengajuan_sidang,
+            ];
+            // $idta = $ta->ID_TA;
+            return view('paa.sidang', compact('data', 'mahasiswa'));
+            return view('paa.sidang', $data);
+
+        
 
     }
 }

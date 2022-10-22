@@ -41,7 +41,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="">
+            <a class="nav-link " href="/paa-sidang">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <iconify-icon icon="fluent:document-28-filled" width="18" style="color: #6d0cba;"></iconify-icon>
               </div>
