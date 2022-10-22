@@ -31,12 +31,14 @@ $counter = 1;
                                         <th>{{ $counter }}</th>
                                         <th>{{ $data -> JUDUL_TA }}</th>
                                         <th>{{ date('d F Y', strtotime($data->TGL_PENGAJUAN)); }}</th>
-                                        <th>{{ $data -> laporan_awal }}</th>
+                                        <th><a href="uploads/{{ $data->laporan_awal}}"><button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button></a></th>
                                         <th>
                                             @if ($data -> STATUS_TA === 1)
                                                 <span style="color:rgb(0, 216, 0)">Disetujui</span>
-                                                @else
-                                                <span style="color:rgb(53, 134, 255)">Belum Disetujui</span>                      
+                                                @elseif ($data ->STATUS_TA === 0)
+                                                    <span style="color:rgb(53, 134, 255)">Belum Disetujui</span>
+                                                    @elseif ($data ->STATUS_TA === 2)
+                                                    <span style="color:rgb(221, 26, 26)">Ditolak</span>                     
                                             @endif
                                         </th>
    

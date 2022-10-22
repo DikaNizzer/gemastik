@@ -63,6 +63,11 @@ Route::get('/logout-mahasiswa', [LoginController::class, 'logoutmahasiswa']);
 Route::get('/anak-wali', [DosenController::class, 'getMahasiswa']);
 // AMBIL DATA TA MHS
 Route::get('/pengajuan-ta', [DosenController::class, 'getTA']);
+// UBAH STATUS TA DARI DOSEN
+Route::get('/ubah-status/{idta}/{status}', [DosenController::class, 'updateStatus']);
+
+
+
 
 
 //Ambil  Data bimbingan GATAU PUNYA SIAPA LUPAA

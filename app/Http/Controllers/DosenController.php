@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\TugasAkhir;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -41,6 +42,19 @@ class DosenController extends Controller
 
         $mahasiswa = Mahasiswa::where('dosen_NIP',session()->get('datadosen')->NIP)->has('tugas_akhirs')->get();
         return view('dosen.pengajuan-ta', compact('mahasiswa', 'data'));
+        // return view('dosen.index', $data);
+    }
+
+    public function updateStatus($idta, $status){
+        $data = [
+			'title' => 'SILOLAVAIR || Dashboard Dosen',
+		];
+
+        var_dump($idta, $status);
+        TugasAkhir::where('ID_TA', $idta)
+        ->update(['STATUS_TA' => $status]);
+
+        return redirect('/pengajuan-ta');
         // return view('dosen.index', $data);
     }
 

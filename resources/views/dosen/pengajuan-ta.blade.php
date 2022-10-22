@@ -22,6 +22,9 @@ $counter = 1;
                                         <th>Email</th>
                                         <th>No Telp</th>
                                         <th>Judul TA</th>
+                                        <th>Berkas TA</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody >
@@ -35,11 +38,37 @@ $counter = 1;
                                         @foreach($data->tugas_akhirs as $ta)
                                             {{-- {{$ta->JUDUL_TA}} --}}
                                             <th>{{ $ta->JUDUL_TA }}</th>
+                                            <th><a href="uploads/{{ $ta->laporan_awal}}"><button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button></a></th>
+                                            <th>
+                                                @if ($ta ->STATUS_TA === 1)
+                                                    <span style="color:rgb(0, 216, 0)">Disetujui</span>
+                                                    @elseif ($ta ->STATUS_TA === 0)
+                                                    <span style="color:rgb(53, 134, 255)">Belum Disetujui</span>
+                                                    @elseif ($ta ->STATUS_TA === 2)
+                                                    <span style="color:rgb(221, 26, 26)">Ditolak</span>                      
+                                                @endif
+                                            </th>
+                                            <th>
+                                                <div class="dropdown">
+                                                    <button class="btn bg-gradient-success dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                      Pilih Status
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <li><a class="dropdown-item" href="ubah-status/{{$ta->ID_TA}}/0">Tunggu Konfirmasi</a></li>
+                                                      <li><a class="dropdown-item" href="ubah-status/{{$ta->ID_TA}}/1">Setujui</a></li>
+                                                      <li><a class="dropdown-item" href="ubah-status/{{$ta->ID_TA}}/2">Ubah Judul</a></li>
+                                                      
+                                                    </ul>
+                                                </div>
+                                            </th>
                                         @endforeach
+                                        
                                     </tr>  
                                    <?php $counter++ ?>
-                                    @endforeach                              
+                                    @endforeach
+                                                                 
                                 </tbody>
+                                
                             </table>
                         </div>
                     </div>
