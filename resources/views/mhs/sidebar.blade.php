@@ -64,8 +64,8 @@
         </a>
       </li>
 
-        <li class="nav-item">
-          <a class="nav-link " href="">
+        <li class="nav-item<?= !!strpos($_SERVER['REQUEST_URI'], 'show-jadwal') ? 'active' : '' ?>">
+          <a class="nav-link " href="show-jadwal">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <iconify-icon icon="bi:calendar-event-fill" style="color: #6d0cba;"></iconify-icon>
             </div>

@@ -122,4 +122,23 @@ class MahasiswaController extends Controller
         </script>";
         // return redirect('/mahasiswa-bimbingan');
     }
+
+        // Get TA
+        public function getJadwal(){
+        
+
+            
+            $sidang = Jadwalsidang::where('mahasiswa_NIM', session()->get('datamahasiswa')->NIM)->get();
+            // dd($sidang);
+                $data = [
+                    'title' => 'SILOLAVAIR || Dashboard',
+                    'datasidang' => $sidang,
+                    
+                ];
+                // $idta = $ta->ID_TA;
+                return view('mhs.jadwal', $data);
+    
+
+    
+        }
 }

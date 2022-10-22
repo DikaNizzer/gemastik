@@ -17,7 +17,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/buat-akun-dosen">
+          <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'buat-akun-dosen') ? 'active' : '' ?>" href="/buat-akun-dosen">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <iconify-icon icon="bi:people-fill" style="color: #6d0cba;"></iconify-icon>
             </div>
@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="/buat-akun-mhs">
+            <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'buat-akun-mhs') ? 'active' : '' ?>" href="/buat-akun-mhs">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <iconify-icon icon="bi:people-fill" style="color: #6d0cba;"></iconify-icon>
               </div>
@@ -41,7 +41,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="/paa-sidang">
+            <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'paa-sidang"') ? 'active' : '' ?>" href="/paa-sidang">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <iconify-icon icon="fluent:document-28-filled" width="18" style="color: #6d0cba;"></iconify-icon>
               </div>
@@ -51,7 +51,7 @@
 
 
           <li class="nav-item">
-            <a class="nav-link " href="/paa-jadwal">
+            <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'paa-jadwal') ? 'active' : '' ?>" href="/paa-jadwal">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <iconify-icon icon="bi:calendar-event-fill" style="color: #6d0cba;"></iconify-icon>
               </div>

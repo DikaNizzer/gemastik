@@ -74,6 +74,8 @@ Route::post('/upload-bimbingan', [MahasiswaController::class, 'createBimbingan']
 Route::get('/ajukan-sidang', [MahasiswaController::class, 'getSidang']);
 // Update kekurangan data ta untuk sidang
 Route::post('/update-ta', [MahasiswaController::class, 'updateTa']);
+//Ambil  Data Jadwal
+Route::get('/show-jadwal', [MahasiswaController::class, 'getJadwal']);
 
 //Ambil Data Ta yang disetujui
 Route::get('/ta-acc', [DosenController::class, 'taAcc']);
