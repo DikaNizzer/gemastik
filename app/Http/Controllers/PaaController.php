@@ -104,9 +104,43 @@ class PaaController extends Controller
                 'laporanAkhir' => $ta->LAPORAN_FINAL_TA,
                 'tanggal' => $ta->pengajuan_sidang,
             ];
-            // $idta = $ta->ID_TA;
-            return view('paa.sidang', compact('data', 'mahasiswa'));
-            return view('paa.sidang', $data);
+            $dosen = Dosen::all();
+            return view('paa.sidang', compact('data', 'mahasiswa', 'dosen'));
+
+        
+
+    }
+
+    public function createJadwal(Request $request)
+    {
+        $validatedData = $request->validate([
+            'mahasiswa_NIM' => 'required',
+            'WAKTU_SIDANG' => 'required',
+            'DOSEN_PENGUJI' => 'required',
+            'STATUS_SIDANG' => 'required',
+
+        ]);
+        // dd($validatedData);
+        Jadwalsidang::create($validatedData);
+        return redirect('/paa-sidang');
+
+    }
+
+    public function getJadwal(){
+        
+
+
+        $mahasiswa = Mahasiswa::with('jadwalsidangs')->get();
+        //   dd($mahasiswa);
+
+
+            $data = [
+                'title' => 'SILOLAVAIR || Dashboard',
+
+            ];
+            $dosen = Dosen::all();
+            return view('paa.jadwal', compact('data', 'mahasiswa' ));
+
 
         
 

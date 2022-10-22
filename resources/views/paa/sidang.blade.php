@@ -8,7 +8,7 @@ $counter = 1;
 <section>
     <div class="container" style="padding:30px;">
         <h4 style="color:#ffff">Pengajuan Sidang </h4>
-        <div><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#create-bimbingan">Add +</button></div>
+        {{-- <div></div> --}}
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -24,8 +24,9 @@ $counter = 1;
                                         <th>NIM </th>
                                         <th>Nama </th>
                                         <th>Lembar Pengesahan</th>
-                                        <th>Laporan FInal Ta</th>
+                                        <th>Laporan Final Ta</th>
                                         <th>Tanggal Pengajuan</th>
+                                        <th>Menu</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,7 +43,8 @@ $counter = 1;
                                             <th> {{ date('d F Y', strtotime($ta->pengajuan_sidang)); }}</th>
                         
                                         @endforeach
-                                        
+                                        <th><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#create-bimbingan" onclick="idbar('{{$mhs->NAMA_MHS}}', '{{$mhs->NIM}}')" onclick="nim('{{$mhs->NIM}}')"  data-idbar="{{$mhs->NIM}}" data-namabar="{{$mhs->NIM}}">
+                                            Jadwalkan Sidang +</button></th>
                                     </tr>  
                                    <?php $counter++ ?>
                                    @endforeach
@@ -54,7 +56,23 @@ $counter = 1;
                 </div>
     </div>
 </section>
-
+<script>
+    $(document).on("click", "#modbarang", function(){
+      let idd = $(this).data('idbar');
+      let namaa = $(this).data('namabar');
+  
+      $('.modal-body #id').val(idd);
+      $('.modal-body #nama').val(namaa);
+    })
+  
+    function idbar(id, nim){
+      document.querySelector("#hasilid").value = id;
+      document.querySelector("#nim").value = nim;
+    }
+    // function nim(nim){
+    //   document.querySelector("#nim").value = nim;
+    // }
+  </script>
 
     {{------------------------------------
 	CREATE TA MODAL
@@ -70,18 +88,34 @@ $counter = 1;
             <div class="modal-body" style="padding:40px">
                 <center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
               <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Lengkapi Berkas Tugas Akhir</h5>
-              <form action="update-ta" method="post" enctype="multipart/form-data">
+              <form action="create-jadwal" method="post" enctype="multipart/form-data">
                 @csrf
                 
-                <div class="mb-3">
-                    <label for="file" class="form-label">Upload Lembar Pengesahan</label><br/>
-                    <input class="form-control" type="file" id="file" name="LEMBAR_PENGESAHAN" >
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label auth-label">Nama Mahasiswa </label>
+                    <input class="form-control auth-form" type="text" id="hasilid" aria-label="default input example" readonly>
                 </div>
-                <div class="mb-3">
-                    <label for="file" class="form-label">Upload Laporan Final TA</label><br/>
-                    <input class="form-control" type="file" id="file" name="LAPORAN_FINAL_TA" >
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label auth-label">NIM Mahasiswa </label>
+                    <input class="form-control auth-form" name="mahasiswa_NIM" type="text" id="nim" aria-label="default input example" readonly>
                 </div>
-                <center><button type="submit" class="register mt-4" style="margin:auto" >UPLOAD</button></center>
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label auth-label">Waktu Sidang </label>
+                    <input class="form-control auth-form" type="datetime-local" name="WAKTU_SIDANG" aria-label="default input example" required>
+                </div>
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label auth-label">Dosen Penguji </label>
+                    <select name="DOSEN_PENGUJI" id="" class="form-control">
+                        <option selected>Pilih Dosen Penguji</option>
+                        @foreach ($dosen as $data)
+                        <option value="{{ $data->NAMA_DOSEN }}">{{ $data->NAMA_DOSEN }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-4 mt-4" >
+                    <input class="form-control auth-form" type="hidden" name="STATUS_SIDANG" aria-label="default input example" value="0">
+                </div>
+                <center><button type="submit" class="register mt-4" style="margin:auto" >Buat</button></center>
               </form>
             </div>
           </div>

@@ -80,6 +80,10 @@ Route::get('/ta-acc', [DosenController::class, 'taAcc']);
 
 //Ambil Data Ta yang maju sidang di PAA
 Route::get('/paa-sidang', [PaaController::class, 'getSidang']);
+// Input Data sidang
+Route::post('/create-jadwal', [PaaController::class, 'createJadwal']);
+//Ambil Data Jadwal sidang di PAA
+Route::get('/paa-jadwal', [PaaController::class, 'getJadwal']);
 
 
 
