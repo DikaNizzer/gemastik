@@ -76,7 +76,8 @@ Route::get('/ajukan-sidang', [MahasiswaController::class, 'getSidang']);
 Route::post('/update-ta', [MahasiswaController::class, 'updateTa']);
 
 
-
+//Ambil Data Ta yang disetujui
+Route::get('/ta-acc', [DosenController::class, 'taAcc']);
 
 
 

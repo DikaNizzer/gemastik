@@ -58,4 +58,19 @@ class DosenController extends Controller
         // return view('dosen.index', $data);
     }
 
+    public function taAcc(){
+        $data = [
+			'title' => 'SILOLAVAIR || Dashboard Dosen',
+		];
+
+        // $mahasiswa = Mahasiswa::where('dosen_NIP',session()->get('datadosen')->NIP)->where('')->has('tugas_akhirs')->where()->get();
+        $mahasiswa = Mahasiswa::where('dosen_NIP',session()->get('datadosen')->NIP)->with(['tugas_akhirs'=>function($query){
+            $query->where('STATUS_TA' , '=', '1');
+          }])->get();
+
+        //   dd($mahasiswa);
+        return view('dosen.ta', compact('mahasiswa', 'data'));
+        // return view('dosen.index', $data);
+    }
+
 }

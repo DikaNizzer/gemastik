@@ -32,8 +32,8 @@
               <span class="nav-link-text ms-1">Pengajuan TA Mahasiswa</span>
             </a>
           </li>
-        <li class="nav-item">
-            <a class="nav-link " href="">
+        <li class="nav-item<?= !!strpos($_SERVER['REQUEST_URI'], '/ta-acc') ? 'active' : '' ?>" href="//ta-acc">
+            <a class="nav-link " href="/ta-acc">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                   <iconify-icon icon="fa6-solid:book-open" style="color: #6d0cba;"></iconify-icon>
               </div>
