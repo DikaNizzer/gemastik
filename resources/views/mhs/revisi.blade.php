@@ -19,7 +19,7 @@ $counter = 1;
                                 <thead>
                                     <tr>
                                         <th style="width:10px">No</th>
-                                        <th>ID TA</th>
+                                        <th>ID TA </th>
                                         <th>Tanggal Revisi</th>
                                         <th>Keterangan</th>
                                         <th>Pemberi Revisi</th>
@@ -64,7 +64,7 @@ $counter = 1;
             <div class="modal-body" style="padding:40px">
                 <center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
               <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Upload Riwayat Revisi</h5>
-              <form action="upload-revisi" method="post" enctype="multipart/form-data">
+              <form action="rev" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4 mt-4">
                   <label for="exampleFormControlInput1" class="form-label auth-label">Tanggal Revisi </label>
@@ -72,7 +72,7 @@ $counter = 1;
                 </div>
                 <div class="mb-4 mt-4">
                     <label for="exampleFormControlInput1" class="form-label auth-label">Keterangan Revisi </label>
-                    <input class="form-control auth-form" type="text" name="KETERANGANL_REVISI" aria-label="default input example" required>
+                    <input class="form-control auth-form" type="text" name="KETERANGAN_REVISI" aria-label="default input example" required>
                   </div>
                   <div class="mb-4 mt-4">
                     <label for="exampleFormControlInput1" class="form-label auth-label">Pemberi Revisi</label>

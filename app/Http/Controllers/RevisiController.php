@@ -51,6 +51,8 @@ class RevisiController extends Controller
             'LAPORAN_TA'        => 'required',
 
         ]);
+
+        // dd($validatedData);
         $validatedData['LAPORAN_TA'] = $request->file('LAPORAN_TA')->getClientOriginalName();
         $file = $request->file('LAPORAN_TA');
         $target_dir = "uploads/revisi/"; //lokasi
@@ -65,6 +67,21 @@ class RevisiController extends Controller
 
 
         return redirect('/mahasiswa-revisi');
+    }
+
+    public function createRev(Request $request)
+    {
+        $validatedData = $request->validate([
+            'TANGGAL_REVISI'  => 'required',
+            'KETERANGAN_REVISI'       => 'required',
+            'PEMBERI_REVISI'   => 'required',
+            'ta_ID_TA'   => 'required',
+        ]);
+
+    dd($validatedData);
+    RiwayatRevisi::create($request);
+        echo 'DIPENCET';
+
     }
 
 }

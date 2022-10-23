@@ -39,7 +39,7 @@ Route::post('/upload-ta', [TugasAkhirController::class, 'create_ta']);
 
 //revisi mhs 
 Route::get('/mahasiswa-revisi', [RevisiController::class, 'get_revisi']);
-Route::post('/upload-revisi', [RevisiController::class, 'create_revisi']);
+Route::post('/rev', [RevisiController::class, 'create_revisi']);
 
 
 
