@@ -19,8 +19,6 @@ $counter = 1;
                                         <th style="width:10px">No</th>
                                         <th>NIM</th>
                                         <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>No Telp</th>
                                         <th>Judul TA</th>
                                         <th>Berkas TA</th>
                                         <th>Status</th>
@@ -33,8 +31,6 @@ $counter = 1;
                                         <th>{{ $counter }}</th>
                                         <th>{{ $data ->NIM }}</th>
                                         <th>{{ $data->NAMA_MHS }}</th>
-                                        <th>{{ $data ->EMAIL_MHS }}</th>
-                                        <th>{{ $data ->NO_TLP_MHS }}</th>
                                         @foreach($data->tugas_akhirs as $ta)
                                             {{-- {{$ta->JUDUL_TA}} --}}
                                             <th>{{ $ta->JUDUL_TA }}</th>

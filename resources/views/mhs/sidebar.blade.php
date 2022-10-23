@@ -46,8 +46,8 @@
           <span class="nav-link-text ms-1">Bimbingan</span>
         </a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link " href="">
+      <li class="nav-item ">
+          <a class="nav-link <?= !!strpos($_SERVER['REQUEST_URI'], 'mahasiswa-revisi') ? 'active' : '' ?> " href="mahasiswa-revisi">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <iconify-icon icon="fa6-solid:folder-closed" style="color: #6d0cba;"></iconify-icon>
             </div>

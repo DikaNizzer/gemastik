@@ -59,7 +59,7 @@ $counter = 1;
           </div>
             <div class="modal-body" style="padding:40px">
                 <center><img src="assets/images/navbar logo.png" height="auto" width="50%" style="margin-bottom:20px" alt=""></center>
-              <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Upload Tugas Akhir</h5>
+              <h5 style="text-align:center; font-size:14px; font-weight:700; margin-bottom:20px;">Upload Bimbingan</h5>
               <form action="upload-bimbingan" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4 mt-4">
@@ -74,7 +74,7 @@ $counter = 1;
                     <input class="form-control auth-form" type="hidden" name="ta_ID_TA" aria-label="default input example" value="{{ $idta }}">
                 </div>
                 <div class="mb-3">
-                    <label for="file" class="form-label">Laporan Awal</label><br/>
+                    <label for="file" class="form-label">Kartu Kendali</label><br/>
                     <input class="form-control" type="file" id="file" name="kartu" >
                 </div>
                 <center><button type="submit" class="register mt-4" style="margin:auto" >UPLOAD</button></center>

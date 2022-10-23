@@ -29,7 +29,7 @@ class TugasAkhirController extends Controller
             'JUDUL_TA'       => 'required',
             'laporan_awal'   => 'required',
         ]);
-
+        $validatedData['laporan_awal'] = $request->file('laporan_awal')->getClientOriginalName();
         $file = $request->file('laporan_awal');
         $target_dir = "uploads/"; //lokasi
         $target_file = $target_dir . basename($_FILES["laporan_awal"]["name"]); //tempat lokasi
@@ -43,7 +43,6 @@ class TugasAkhirController extends Controller
         $id_ta = TugasAkhir::all()->last()->ID_TA;
 
         DB::table('tugas_akhir')->where('ID_TA',$id_ta)->update([
-            'laporan_awal'     => basename($_FILES["laporan_awal"]["name"]),
             'TGL_PENGAJUAN'    => date('Y-m-d H:i:s')
         ]);
 

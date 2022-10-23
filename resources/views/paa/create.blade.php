@@ -89,7 +89,7 @@
                     <input class="form-control auth-form" id="email_dosen" type="text" name="EMAIL_DOSEN" aria-label="default input example" >
                 </div>
                 <div class="mb-4 mt-4">
-                    <label for="Telp_dosen" class="form-label auth-label">NO. TELEFON </label>
+                    <label for="Telp_dosen" class="form-label auth-label">NO. TELEPON </label>
                     <input class="form-control auth-form" id="telp_dosen" type="number" name="NO_TLP_DOSEN" aria-label="default input example" >
                 </div>
                 <div class="mb-4 mt-4">

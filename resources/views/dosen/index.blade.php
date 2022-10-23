@@ -5,22 +5,41 @@
 
 <section>
     <div class="container" style="padding:30px;">
-        
-                <!-- DataTales Example -->
+        <h4 style="color:#ffff">Profile </h4>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        {{-- <a href="/cetak-pengurus" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
                     </div>
                     <div class="card-body">
-                        {{session()->get('datadosen')->NIP}}
-                        {{session()->get('datadosen')->NAMA_DOSEN}}
-                        {{session()->get('datadosen')->EMAIL_DOSEN}}
+                        <h5 style="color:rgb(108, 0, 162); font-weight:700;">Data Dosen</h5>
+                        <div class="row">
+                            <div class="col-3">
+                                <h5 style="font-size:16px; font-weight:700">NIP</h5>
+                            </div>
+                            <div class="col-9">
+                                <h5 style="font-size:16px; font-weight:500">:   {{session()->get('datadosen')->NIP}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <h5 style="font-size:16px; font-weight:700">Nama</h5>
+                            </div>
+                            <div class="col-9">
+                                <h5 style="font-size:16px; font-weight:500">:    {{session()->get('datadosen')->NAMA_DOSEN}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <h5 style="font-size:16px; font-weight:700">Email</h5>
+                            </div>
+                            <div class="col-9">
+                                <h5 style="font-size:16px; font-weight:500">:        {{session()->get('datadosen')->EMAIL_DOSEN}}</h5>
+                            </div>
+                        </div>
+                       
                     </div>
                 </div>
     </div>
 </section>
-
 
 
  

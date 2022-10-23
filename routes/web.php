@@ -6,6 +6,7 @@ use App\Http\Controllers\PaaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BimbinganController;
+use App\Http\Controllers\RevisiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\TugasAkhirController;
 /*
@@ -35,6 +36,10 @@ Route::post('/store-akun-mhs', [PaaController::class, 'storeMhs']);
 //Tugas AKhir LIA MHS UPLOAD TA DONE
 Route::get('/mahasiswa-ta', [TugasAkhirController::class, 'get_ta']);
 Route::post('/upload-ta', [TugasAkhirController::class, 'create_ta']);
+
+//revisi mhs 
+Route::get('/mahasiswa-revisi', [RevisiController::class, 'get_revisi']);
+Route::post('/upload-revisi', [RevisiController::class, 'create_revisi']);
 
 
 
